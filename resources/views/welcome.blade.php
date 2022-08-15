@@ -1,132 +1,653 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sylnifty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.20.0/dist/full.css" rel="stylesheet" type="text/css" />
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+    <link rel="stylesheet" href="{{ url('storage/css') }}/app.css">
+    <script src="https://kit.fontawesome.com/6ed674a615.js" crossorigin="anonymous"></script>
+</head>
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
+<body class="bg-gray-1000">
+    <div class="bg-black-opacity">
+        <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+            <div class="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
+                <ul class="flex items-center hidden space-x-8 lg:flex">
+                    <li><a href="#about" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Sobre</a>
+                    </li>
+                    <li><a href="#gallery" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Galeria</a>
+                    </li>
+                    <li>
+                        <a href="https://privacy.com.br/Checkout/SylNifty/" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Assinatura</a>
+                    </li>
+                    <li>
+                        <a href="https://sylnifty.com/?page_id=1394&lang=pt" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Loja</a>
+                    </li>
+                    <li>
+                        <a href="/wiki" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Aprenda</a>
+                    </li>
+                    <li>
+                        <a href="/blog" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Blog</a>
+                    </li>
+                </ul>
+                <a href="/" aria-label="Company" title="Company" class="inline-flex items-center lg:mx-auto">
+                    <!-- <svg class="w-8 text-teal-accent-400" viewBox="0 0 24 24" stroke-linejoin="round" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke="currentColor" fill="none">
+                <rect x="3" y="1" width="7" height="12"></rect>
+                <rect x="3" y="17" width="7" height="6"></rect>
+                <rect x="14" y="1" width="7" height="6"></rect>
+                <rect x="14" y="11" width="7" height="12"></rect>
+              </svg> -->
+                    <img src="{{ url('storage/logo') }}/Syl-Nifty-Logo.png" width="100" alt="">
+                    <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase"></span>
+                </a>
+                <ul class="flex items-center hidden ml-auto space-x-8 lg:flex">
+                    <li>
+                        <a href="#my-modal-3" aria-label="Sign in" title="Sign in" class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Login
+                        </a>
+                        <div class="modal" id="my-modal-3">
+                            <div class="modal-box">
+                                <h3 class="font-bold text-lg">Login</h3>
+                                <div class="py-4">
+                                    <form action="/user/login" method="POST">
+                                        @csrf
+                                        <div class="mb-1 sm:mb-2">
+                                            <label for="email" class="inline-block mb-1 font-medium">E-mail</label>
+                                            <input placeholder="john.doe@example.org" required="" type="text" class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline" id="email" name="email" />
+                                        </div>
+                                        <div class="mb-1 sm:mb-2">
+                                            <label for="password" class="inline-block mb-1 font-medium">Senha</label>
+                                            <input placeholder="" required="" type="password" class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline" id="password" name="password" />
+                                        </div>
+                                        <div class="mt-4 mb-2 sm:mb-4">
+                                            <button type="submit" class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-green-400 hover:bg-green-700 focus:shadow-outline focus:outline-none">
+                                                Entrar
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-action">
+                                    <a href="#" class="btn bg-red-500">Fechar</a>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
-
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
+                    </li>
+                    <li>
+                        <a href="#cad" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none" aria-label="Sign up" title="Sign up">
+                            Cadastre-se
+                        </a>
+                    </li>
+                </ul>
+                <!-- Mobile menu -->
+                <div class="ml-auto lg:hidden">
+                    <button aria-label="Open Menu" title="Open Menu" class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline">
+                        <svg class="w-5 text-gray-600" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path>
+                            <path fill="currentColor" d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"></path>
+                            <path fill="currentColor" d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"></path>
+                        </svg>
+                    </button>
+                    <!-- Mobile menu dropdown
+              <div class="absolute top-0 left-0 w-full">
+                <div class="p-5 bg-white border rounded shadow-sm">
+                  <div class="flex items-center justify-between mb-4">
+                    <div>
+                      <a href="/" aria-label="Company" title="Company" class="inline-flex items-center">
+                        <svg class="w-8 text-deep-purple-accent-400" viewBox="0 0 24 24" stroke-linejoin="round" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" stroke="currentColor" fill="none">
+                          <rect x="3" y="1" width="7" height="12"></rect>
+                          <rect x="3" y="17" width="7" height="6"></rect>
+                          <rect x="14" y="1" width="7" height="6"></rect>
+                          <rect x="14" y="11" width="7" height="12"></rect>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">Company</span>
+                      </a>
                     </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
+                    <div>
+                      <button aria-label="Close Menu" title="Close Menu" class="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                        <svg class="w-5 text-gray-600" viewBox="0 0 24 24">
+                          <path
+                            fill="currentColor"
+                            d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
+                          ></path>
+                        </svg>
+                      </button>
                     </div>
+                  </div>
+                  <nav>
+                    <ul class="space-y-4">
+                      <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Product</a></li>
+                      <li><a href="/" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Features</a></li>
+                      <li><a href="/" aria-label="Product pricing" title="Product pricing" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Pricing</a></li>
+                      <li><a href="/" aria-label="Sign in" title="Sign in" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">Sign in</a></li>
+                      <li>
+                        <a
+                          href="/"
+                          class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                          aria-label="Sign up"
+                          title="Sign up"
+                        >
+                          Sign up
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              -->
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- if success in session exists --}}
+    @if (session('success'))
+    <div class="alert alert-success shadow-lg mb-10">
+        <div class="flex flex-row justify-between w-full">
+            <div class="flex">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{{ session('success') }}. Confirme em seu email seu cadastro!</span>
+            </div>
+            <button onclick="closeModal()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
 
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+        </div>
+    </div>
+    @elseif (session('error'))
+    <div class="alert alert-error shadow-lg">
+        <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>{{ session('error') }}</span>
+        </div>
+    </div>
+    @endif
+    <script>
+        function closeModal() {
+            document.querySelector('.alert').remove();
+        }
+    </script>
+    <div class="relative pt-40">
+        <img src="{{ url('storage/backgrounds') }}/bg2.jpg" class="absolute inset-0 object-cover w-full h-full" alt="" />
+        <div class="relative bg-opacity-75 bg-deep-purple-accent-700">
+            <svg class="absolute inset-x-0 bottom-0 text-white" viewBox="0 0 1160 163">
+                <path fill="#1B2028" d="M-164 13L-104 39.7C-44 66 76 120 196 141C316 162 436 152 556 119.7C676 88 796 34 916 13C1036 -8 1156 2 1216 7.7L1276 13V162.5H1216C1156 162.5 1036 162.5 916 162.5C796 162.5 676 162.5 556 162.5C436 162.5 316 162.5 196 162.5C76 162.5 -44 162.5 -104 162.5H-164V13Z">
+                </path>
+            </svg>
+            <div class="relative px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+                <div class="flex flex-col items-center justify-between xl:flex-row">
+                    <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
+                        <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+                            CONHEÇA O MUNDO <br class="hidden md:block" />
+                            SYLNIFTY
+                        </h2>
+                        <p class="max-w-xl mb-4 text-base text-gray-200 md:text-lg">
+                            Explore um mundo diferente!
+                        </p>
+                        <a href="#about" class="bg-gray-700 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
+                            Explorar
+                        </a>
+                        <!-- <a href="/" aria-label=""
+                            class="inline-flex items-center font-semibold tracking-wider transition-colors duration-200 text-teal-accent-400 hover:text-teal-accent-700">
+                            Learn more
+                            <svg class="inline-block w-3 ml-2" fill="currentColor" viewBox="0 0 12 12">
+                                <path
+                                    d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z">
+                                </path>
+                            </svg>
+                        </a> -->
+                    </div>
+                    <div class="w-full max-w-xl xl:px-8 xl:w-5/12">
+                        <div class="bg-gray-900-opacity rounded shadow-2xl p-7 sm:p-10 text-white">
+                            <h3 class="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+                                Agende sua sessão
+                            </h3>
+                            <form action="/order" method="POST">
+                                @csrf
+                                <div class="mb-1 sm:mb-2">
+                                    <label for="name" class="inline-block mb-1 font-medium">Nome ou
+                                        Apelido:</label>
+                                    <input placeholder="John" required="" type="text" class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-gray-900-opacity border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline" id="name" name="name" />
+                                </div>
+                                <div class="mb-1 sm:mb-2">
+                                    <label for="phone" class="inline-block mb-1 font-medium">Telefone:</label>
+                                    <input placeholder="Doe" required="" type="tel" class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-gray-900-opacity border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline" id="phone" name="phone" />
+
+
+                                </div>
+                                <div class="mb-1 sm:mb-2">
+                                    <label for="whatsapp" class="inline-block mb-5 font-medium">Whatsapp:</label>
+                                    <br><input value="true" type="radio" name="whatsapp" class="radio" checked /> Sim
+                                    <input value="false" type="radio" name="whatsapp" class="radio" /> Não
+                                </div>
+                                <div class="mb-1 sm:mb-2 mt-5">
+                                    <label for="email" class="inline-block mb-1 font-medium">E-mail:</label>
+                                    <input placeholder="john.doe@example.org" required="" type="text" class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-gray-900-opacity border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline" id="email" name="email" />
+                                </div>
+                                <div class="mt-4 mb-2 sm:mb-4">
+                                    <button type="submit" class="bg-black inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
+                                        Continuar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+            <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+                <div>
+                    <p id="about" class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+                        Sylnifty
+                    </p>
+                </div>
+                <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-200 sm:text-4xl md:mx-auto">
+                    <span class="relative inline-block">
+                        <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
+                            <defs>
+                                <pattern id="70326c9b-4a0f-429b-9c76-792941e326d5" x="0" y="0" width=".135" height=".30">
+                                    <circle cx="1" cy="1" r=".7"></circle>
+                                </pattern>
+                            </defs>
+                            <rect fill="url(#70326c9b-4a0f-429b-9c76-792941e326d5)" width="52" height="24">
+                            </rect>
+                        </svg>
+                        <span class="relative">O</span>
+                    </span>
+                    Mundo de Syl Nifty
+                </h2>
+                <p class="text-base text-gray-300 md:text-lg">
+                    Conheça um pouco mais sobre o mundo de Syl Nifty
+                </p>
+            </div>
+        </div>
+        <div class="max-w-screen-xl sm:mx-auto ">
+            <div class="grid grid-cols-1 gap-16 row-gap-8 lg:grid-cols-2 ">
+                <div class="space-y-8">
+                    <div>
+                        {{-- <p class="mb-4 text-xl font-medium text-gray-300">
+                            Title form my paragraph.
+                        </p> --}}
+                        <p class="text-gray-300">
+                            Lady Syl foi o primeiro nome criado, no começo de tudo apenas Syl mesmo. Era inicio de 2016
+                            e num vídeo com o acrônimo BDSM no título, despertou a curiosidade, então, fui atrás.
+                            Descobrindo entre conhecidos, fui parar num grupo de adeptos e curiosos sobre o tema, no
+                            grupo tinham 2 mentores, Mestres Dominadores com muitos anos de experiência. Durante cerca
+                            de 4 meses li muito, pesquisei, perguntei e assisti vídeos, eu definitivamente me encaixava
+                            nesse mundo, não tinha dúvidas, mas como? Qual posição? ...
+                            <br>
+                            <!-- read more -->
+                            <!-- <a class="" onclick="readMore(true)">
+                                <span class="text-blue-500 cursor-pointer" id="link-read-more">
+                                    Leia mais
+                                </span>
+                            </a> -->
+                        </p>
+                    </div>
+                    <div id="second-article">
+                        <p class="text-gray-300">
+                            Eu me via em ambas as posições, porque gostava de uma pegada mais bruta no sexo e por esse
+                            motivo isso confundia meu posicionamento. E ressalto aqui o “gostava” no passado, pois hoje
+                            tenho que ter o controle até mesmo no sexo, qualquer coisa fora disso é brochante, acaba o
+                            clima mesmo.
+                        </p>
+                    </div>
+                    <div id="second-article">
+                        <p class="text-gray-300">
+                            Voltando ao inicio, como o estudo, leitura, debates e analisando meu passado entendi ser
+                            dominante. Mas como sou teimosa, queria ter certeza, procurei e marquei com um Dom para
+                            sairmos, cheia de dúvidas, mas precisando experimentar para realmente acreditar, saí com ele
+                            e realmente me reconheci uma dominadora… a dominação durou menos de 3 minutos de uso de
+                            clamps literalmente. Insuportável para mim alguém fazer algo comigo que eu não tenha pedido,
+                            me entregar ao prazer, diversão de outro era impossível definitivamente. Após essa
+                            constatação, reconhecendo minha posição como Top, ganhei um presente do meu mentor e amigo
+                            que vou chamar de G, ele me deu um sub para eu começar. E eu só disse: Como assim? Meus
+                            problemas começariam, o que vou fazer com ele? Vinda de 2 casamentos tradicionais, não sabia
+                            nem mandar de forma direta.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div id="second-article">
+                        <p class="text-gray-300">
+                            Começamos a conversar, ele havia tido experiência com uma ex-namorada de humilhação e como
+                            corno. Combinamos nosso primeiro encontro, numa cidade perto da dele, interior de SP, num
+                            hotel, ele providenciou tudo, me buscou entramos no quarto. Claro que foi tudo misturado,
+                            com ele experiências de servidão, pet play, assplay mas a relação foi misturada e ele acabou
+                            confundindo tudo, ou apressando. Cada experiência que ia tendo com ele, vinham dúvidas que
+                            eu compartilhava com o G e ele ia me orientando e esclarecendo. Nesse tempo me cadastrei no
+                            site Senhor Verdugo e comecei a conversar com outros submissos.
+                        </p>
+                    </div>
+                    <div id="second-article">
+                        <p class="text-gray-300">
+                            A relação, já confusa com meu presente, acabou terminando e eu comecei uma nova negociação
+                            com um contato do site, meio que paralela.
+                        </p>
+                    </div>
+                    <div id="second-article">
+                        <p class="text-gray-300">
+                            Ele, chamarei de A, novato de tudo, mas muito interessado na humilhação e spanking, práticas
+                            que não havia vivenciado com o sub presente. Marcamos nossa primeira sessão, e até hoje digo
+                            que foi a melhor e mais planejada sessão que fiz, perfeita em todos os aspectos, intensa,
+                            sem confundir nada, eu 100% dominando, ele completamente entregue mas… ele não conseguiu
+                            lidar com esse prazer, com essa entrega e se desligou do meio se sentindo culpado. Tentei
+                            ajudar, mas eu era também uma novata, indiquei outras pessoas, mesmo assim ele preferiu se
+                            afastar, e eu, com essa segunda experiência, resolvi vivenciar o BDSM e todas as práticas
+                            que surgissem. Fiz um anúncio e comecei a explorar o que eu ia ou não gostar, fazendo cada
+                            uma das práticas, tudo que aparecia eu tinha curiosidade, aceitava, marcava e praticava. Foi
+                            assim que comecei a entender e moldar a Lady Syl.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="gallery" class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div class="max-w-xl sm:mx-auto lg:max-w-2xl">
+            <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+                <div>
+                    <p id="about" class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+                        sylnifty
+                    </p>
+                </div>
+                <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-200 sm:text-4xl md:mx-auto">
+                    <span class="relative inline-block">
+                        <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
+                            <defs>
+                                <pattern id="70326c9b-4a0f-429b-9c76-792941e326d5" x="0" y="0" width=".135" height=".30">
+                                    <circle cx="1" cy="1" r=".7"></circle>
+                                </pattern>
+                            </defs>
+                            <rect fill="url(#70326c9b-4a0f-429b-9c76-792941e326d5)" width="52" height="24">
+                            </rect>
+                        </svg>
+                        <span class="relative">Galeria</span>
+                    </span>
+
+                </h2>
+                <p class="text-base text-gray-300 md:text-lg">
+                    Veja nossas imagens produzidas em nossos eventos.
+                </p>
+            </div>
+        </div>
+        <div class="modal w-screen p-40" id="my-modal-2" onclick="closeModal()">
+            <div id="box-modal" class="w-8/12 h-8/12 p-80 bg-black">
+
+            </div>
+        </div>
+    </div>
+    <section class="overflow-hidden text-gray-700">
+        <div class="container px-5 py-2 mx-auto lg:pt-24 lg:px-32">
+            <div class="flex flex-wrap -m-1 md:-m-2">
+                <div class="flex flex-wrap w-1/2">
+                    <div class="w-1/2 p-1 md:p-2">
+                        <a onclick="imagemInModal()" href="#my-modal-2">
+                            <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg small_img" src="{{ url('storage/galeria') }}/272959974_158238179877630_719561505831994432_n.webpfull.jpg">
+                        </a>
+                    </div>
+                    <div class="w-1/2 p-1 md:p-2">
+                        <a onclick="imagemInModal()" href="#my-modal-2">
+                            <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg small_img" src="{{ url('storage/galeria') }}/273203158_626660568405829_3051469768489746206_n.webpfull.jpg">
+                        </a>
+                    </div>
+                    <div class="w-1/2 p-1 md:p-2">
+                        <a onclick="imagemInModal()" href="#my-modal-2">
+                            <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg small_img" src="{{ url('storage/galeria') }}/274648835_330614532334238_8435085962843593569_n.webpfull.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-wrap w-1/2">
+                    <div class="w-1/2 p-1 md:p-2">
+                        <a onclick="imagemInModal()" href="#my-modal-2">
+                            <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg small_img" src="{{ url('storage/galeria') }}/275418284_3086573861598289_1270114610346356817_n.webpfull.jpg">
+                        </a>
+                    </div>
+                    <div class="w-1/2 p-1 md:p-2">
+                        <a onclick="imagemInModal()" href="#my-modal-2">
+                            <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg small_img" src="{{ url('storage/galeria') }}/276026499_293127609453657_637588963423095061_n.webpfull.jpg">
+                        </a>
+                    </div>
+                    <div class="w-1/2 p-1 md:p-2">
+                        <a onclick="imagemInModal()" href="#my-modal-2">
+                            <img alt="gallery" class="block object-cover object-center w-full h-full rounded-lg small_img" src="{{ url('storage/galeria') }}/280217319_1337567600060521_4695298018589754520_n.webpfull.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    {{-- cadastre-se --}}
+    <div id="cad" class="overflow-hidden bg-gray-900">
+        <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+            <div class="flex flex-col items-center justify-between xl:flex-row">
+                <div class="w-full max-w-xl mb-12 xl:pr-16 xl:mb-0 xl:w-7/12">
+                    <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+                        Cadastre-se <br class="hidden md:block" />
+                    </h2>
+                    <p class="max-w-xl mb-4 text-base text-gray-400 md:text-lg">
+                        Receba atualizações sobre nossos eventos e promoções.
+                    </p>
+                </div>
+                <div class="w-full max-w-xl xl:px-8 xl:w-5/12">
+                    <div class="relative">
+                        <svg viewBox="0 0 52 24" fill="currentColor" class="absolute bottom-0 right-0 z-0 hidden w-32 -mb-8 -mr-20 text-teal-accent-400 lg:w-32 lg:-mr-16 sm:block">
+                            <defs>
+                                <pattern id="766323e1-e594-4ffd-a688-e7275079d540" x="0" y="0" width=".135" height=".30">
+                                    <circle cx="1" cy="1" r=".7"></circle>
+                                </pattern>
+                            </defs>
+                            <rect fill="url(#766323e1-e594-4ffd-a688-e7275079d540)" width="52" height="24">
+                            </rect>
+                        </svg>
+                        <div class="relative bg-white rounded shadow-2xl p-7 sm:p-10">
+                            <h3 class="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
+                                Cadastre-se aqui
+                            </h3>
+                            <form action="/user/register" method="POST">
+                                @csrf
+                                <div class="mb-1 sm:mb-2">
+                                    <label for="name" class="inline-block mb-1 font-medium">Nome:</label>
+                                    <input placeholder="John Doe" required="" type="text" class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline" id="name" name="name" />
+                                </div>
+                                <div class="mb-1 sm:mb-2">
+                                    <label for="email" class="inline-block mb-1 font-medium">E-mail:</label>
+                                    <input placeholder="john.doe@example.org" required="" type="text" class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline" id="email" name="email" />
+                                </div>
+                                <div class="mb-1 sm:mb-2">
+                                    <label for="password" class="inline-block mb-1 font-medium">Senha:</label>
+                                    <input placeholder="" required="" type="password" class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline" id="password" name="password" />
+                                </div>
+                                <div class="mt-4 mb-2 sm:mb-4">
+                                    <button type="submit" class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none">
+                                        Enviar
+                                    </button>
+                                </div>
+                                <p class="text-xs text-gray-600 sm:text-sm">
+                                    Nós respeitamos sua privacidade. Cancele a inscrição a qualquer momento.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-gray-900">
+        <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+            <div class="grid row-gap-10 mb-8 lg:grid-cols-6">
+                <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
+                    <div>
+                        <p class="font-medium tracking-wide text-gray-300">Category</p>
+                        <ul class="mt-2 space-y-2">
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">News</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">World</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Games</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">References</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-medium tracking-wide text-gray-300">Apples</p>
+                        <ul class="mt-2 space-y-2">
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Web</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">eCommerce</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Business</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Entertainment</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Portfolio</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-medium tracking-wide text-gray-300">Cherry</p>
+                        <ul class="mt-2 space-y-2">
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Media</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Brochure</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Nonprofit</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Educational</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Projects</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-medium tracking-wide text-gray-300">Business</p>
+                        <ul class="mt-2 space-y-2">
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Infopreneur</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Personal</a>
+                            </li>
+                            <li>
+                                <a href="/wiki" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Wiki</a>
+                            </li>
+                            <li>
+                                <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">Forum</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:max-w-md lg:col-span-2">
+                    <span class="text-base font-medium tracking-wide text-gray-300">Subscribe for updates</span>
+                    <form class="flex flex-col mt-4 md:flex-row">
+                        <input placeholder="Email" required="" type="text" class="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline" />
+                        <button type="submit" class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p class="mt-4 text-sm text-gray-500">
+                        Bacon ipsum dolor amet short ribs pig sausage prosciuto chicken spare ribs salami.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
+                <p class="text-sm text-gray-500">
+                    © Copyright 2022 sylnifty. Todos os direitos reservados.
+                </p>
+                <div class="flex items-center mt-4 space-x-4 sm:mt-0">
+                    <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-teal-accent-400">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                            <path d="M24,4.6c-0.9,0.4-1.8,0.7-2.8,0.8c1-0.6,1.8-1.6,2.2-2.7c-1,0.6-2,1-3.1,1.2c-0.9-1-2.2-1.6-3.6-1.6 c-2.7,0-4.9,2.2-4.9,4.9c0,0.4,0,0.8,0.1,1.1C7.7,8.1,4.1,6.1,1.7,3.1C1.2,3.9,1,4.7,1,5.6c0,1.7,0.9,3.2,2.2,4.1 C2.4,9.7,1.6,9.5,1,9.1c0,0,0,0,0,0.1c0,2.4,1.7,4.4,3.9,4.8c-0.4,0.1-0.8,0.2-1.3,0.2c-0.3,0-0.6,0-0.9-0.1c0.6,2,2.4,3.4,4.6,3.4 c-1.7,1.3-3.8,2.1-6.1,2.1c-0.4,0-0.8,0-1.2-0.1c2.2,1.4,4.8,2.2,7.5,2.2c9.1,0,14-7.5,14-14c0-0.2,0-0.4,0-0.6 C22.5,6.4,23.3,5.5,24,4.6z"></path>
+                        </svg>
+                    </a>
+                    <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-teal-accent-400">
+                        <svg viewBox="0 0 30 30" fill="currentColor" class="h-6">
+                            <circle cx="15" cy="15" r="4"></circle>
+                            <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z"></path>
+                        </svg>
+                    </a>
+                    <a href="/" class="text-gray-500 transition-colors duration-300 hover:text-teal-accent-400">
+                        <svg viewBox="0 0 24 24" fill="currentColor" class="h-5">
+                            <path d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/gallery.js">
+        < /> <
+        script >
+            var modal = false;
+
+        function closeModal() {
+            window.location.href = "/#gallery";
+        }
+
+        function imagemInModal() {
+            var modal = true;
+            console.log(event.target.src);
+            var boxModal = document.getElementById('box-modal');
+            //set the image background to modal
+            boxModal.style.backgroundImage = "url(" + event.target.src + ")";
+            boxModal.style.backgroundSize = "cover";
+            boxModal.style.backgroundPosition = "center";
+        }
+
+        function readMore(bool) {
+            if (bool) {
+                //seect all divs withs id second-article
+                var divs = document.querySelectorAll('#second-article');
+                var linkReaMore = document.getElementById('link-read-more');
+
+                linkReaMore.style.display = 'none';
+                //set display true for all divs
+                for (var i = 0; i < divs.length; i++) {
+                    divs[i].style.display = 'block';
+                }
+
+            } else {
+                //seect all divs withs id second-article
+                var divs = document.querySelectorAll('#second-article');
+                //set display true for all divs
+                for (var i = 0; i < divs.length; i++) {
+                    divs[i].style.display = 'none';
+                }
+
+                linkReaMore.style.display = 'block';
+            }
+        } <
+        /> < /
+        body >
+
+            <
+            /html>
