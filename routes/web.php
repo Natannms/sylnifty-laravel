@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServicesController;
@@ -21,9 +22,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Controller::class, 'welcome']);
 Route::get('/Home', function () {
     return view('welcome');
 });
@@ -41,6 +40,7 @@ Route::get('/myaccount/home', [UserController::class, 'myaccountHome']);
 Route::get('/social/create', [SocialController::class, 'create']);
 Route::post('/social', [SocialController::class, 'store']);
 Route::post('/social/delete', [SocialController::class, 'destroy']);
+
 //User Routes
 Route::post('/user/login', [UserController::class, 'login'])->name('user.login');
 Route::post('/user/register', [UserController::class, 'store'])->name('user.register');
