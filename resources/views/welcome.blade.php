@@ -19,8 +19,12 @@
 
 <body class="bg-gray-1000">
     <div class="bg-black-opacity">
-        <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-            <div class="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
+        <div class="px-4 py-5 mx-auto sm:max-w-screen md:w-full lg:w-screen md:px-24 lg:px-8">
+
+            <div class="relative flex w-full justify-between items-center">
+                <img src="{{ url('storage/logo') }}/Syl-Nifty-Logo.png" width="70" alt=""
+                class="ml-10 mr-10">
+
                 <ul class="flex items-center hidden space-x-8 lg:flex">
                     <li><a href="#about" aria-label="Our product" title="Our product"
                             class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Sobre</a>
@@ -50,12 +54,9 @@
                         <a href="/blog" aria-label="Product pricing" title="Product pricing"
                             class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Blog</a>
                     </li>
+                    <li></li>
                 </ul>
-                <a href="/" aria-label="Company" title="Company" class="inline-flex items-center lg:mx-auto">
-                    <img src="{{ url('storage/logo') }}/Syl-Nifty-Logo.png" width="100" alt=""
-                        class="ml-10">
-                    <span class="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase"></span>
-                </a>
+
                 <ul class="flex items-center hidden ml-auto space-x-8 lg:flex">
                     <li>
                         <a href="#my-modal-3" aria-label="Sign in" title="Sign in"
@@ -221,6 +222,8 @@
                 class="relative px-4 py-16 mx-auto overflow-hidden sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div class="flex flex-col items-center justify-between xl:flex-row">
                     <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
+                        <img src="{{ url('storage/logo') }}/Syl-Nifty-Logo.png" width="300" alt=""
+                        class="ml-10 mb-20">
                         <h2
                             class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
                             CONHEÇA O MUNDO <br class="hidden md:block" />
@@ -230,7 +233,7 @@
                             Explore um mundo diferente!
                         </p>
                         <a href="#about"
-                            class="bg-gray-700 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
+                            class="bg-indigo-900 inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none">
                             Explorar
                         </a>
                         <!-- <a href="/" aria-label=""
