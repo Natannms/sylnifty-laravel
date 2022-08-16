@@ -119,33 +119,38 @@
             </div>
         </div>
         <div id="menuMobile" class="hidden  w-full bg-gray-900 flex z-50 h-screen fixed top-0 left-0 flex-col">
-                <div onclick="OpenMenuMobile()" class=" cursor-pointer bg-gray-900 h-3/12 close w-full flex mt-5 mb-5 justify-center items-center">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
-                <ul class=" w-full flex-row justify-between items-center">
-                    <li class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
-                        <a href="/sobre" aria-label="Product pricing" title="Product pricing"
-                            class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Sobre</a>
-                    </li>
-                    <li class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
-                        <a href="/aprender" aria-label="Product pricing" title="Product pricing"
-                            class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Aprenda</a>
-                    </li>
-                    <li class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
-                        <a href="/agenda" aria-label="Product pricing" title="Product pricing"
-                            class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Agenda</a>
-                    </li>
-                    <li class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
-                        <a href="/blog" aria-label="Product pricing" title="Product pricing"
-                            class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Blog</a>
-                    </li>
-                </ul>
+            <div onclick="OpenMenuMobile()"
+                class=" cursor-pointer bg-gray-900 h-3/12 close w-full flex mt-5 mb-5 justify-center items-center">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <ul class=" w-full flex-row justify-between items-center">
+                <li
+                    class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
+                    <a href="/sobre" aria-label="Product pricing" title="Product pricing"
+                        class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Sobre</a>
+                </li>
+                <li
+                    class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
+                    <a href="/aprender" aria-label="Product pricing" title="Product pricing"
+                        class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Aprenda</a>
+                </li>
+                <li
+                    class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
+                    <a href="/agenda" aria-label="Product pricing" title="Product pricing"
+                        class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Agenda</a>
+                </li>
+                <li
+                    class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
+                    <a href="/blog" aria-label="Product pricing" title="Product pricing"
+                        class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Blog</a>
+                </li>
+            </ul>
         </div>
     </div>
     <script>
-        function OpenMenuMobile(){
-           const menuMobile = document.getElementById('menuMobile');
-              menuMobile.classList.toggle('hidden');
+        function OpenMenuMobile() {
+            const menuMobile = document.getElementById('menuMobile');
+            menuMobile.classList.toggle('hidden');
         }
     </script>
     {{-- if success in session exists --}}
@@ -472,7 +477,7 @@
     </section>
     </div>
     {{-- cadastre-se --}}
-    <div id="cad" class="overflow-hidden bg-gray-900">
+    <div id="cad" class="overflow-hidden bg-gray-800">
         <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
             <div class="flex flex-col items-center justify-between xl:flex-row">
                 <div class="w-full max-w-xl mb-12 xl:pr-16 xl:mb-0 xl:w-7/12">
@@ -537,18 +542,42 @@
             </div>
         </div>
     </div>
-    <div class="bg-gray-900">
+    <footer class="footer bg-gray-900 p-10 text-base-content">
+        <div>
+            <img class="" src="{{ url('storage/icons/') }}/desenvolvedora.png" alt="" srcset="">
+        </div>
+        <div>
+            <span class="footer-title">Services</span>
+            @foreach ($data['socials'] as $key => $item)
+                <a href="{{ $item->url }}" class="link link-hover"><i class="{{ $item->icon }}"></i>
+                    {{ $item->name }}</a>
+            @endforeach
+        </div>
+        <div>
+            <span class="footer-title">Veja</span>
+            <a href="#about" class="link link-hover">Sobre</a>
+            <a href="#gallery" class="link link-hover">Galeria</a>
+            <a href="https://privacy.com.br/Checkout/SylNifty/" class="link link-hover">Assinatura</a>
+            <a href="https://sylnifty.com/?page_id=1394&lang=pt" class="link link-hover">Loja</a>
+        </div>
+        <div>
+            <span class="footer-title">Mais</span>
+            <a href="/wiki" class="link link-hover">Aprenda</a>
+            <a href="/agenda" class="link link-hover">Agenda</a>
+            <a href="/blog" class="link link-hover">Blog</a>
+        </div>
+    </footer>
+    {{-- <div class="bg-gray-900">
         <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-            <div class="grid row-gap-10 mb-8 lg:grid-cols-6">
-                <div class="flex flex-col">
-                    <div>
-                        <img class="" src="{{ url('storage/icons/') }}/desenvolvedora.png" alt="" srcset="">
-                    </div>
-                    <div class="mt-10 sm:flex w-full">
+            <div class="flex flex-col md:flex-row lg:flex-col items-center">
+                <div>
+                    <img class="" src="{{ url('storage/icons/') }}/desenvolvedora.png" alt="" srcset="">
+                </div>
+                <div class="flex flex-row md:flex-row w-full items-center">
+                    <div class="mt-10 sm:flex w-full justify-center items-center">
                         <p class="font-medium tracking-wide text-gray-300">Redes Sociais</p>
-                        <ul class="mt-2 space-y-2">
+                        <ul class="mt-2 space-y-2 flex flex-col">
                             @foreach ($data['socials'] as $key => $item)
-                                @if ($item->id < 6)
                                     <li>
                                         <a href="{{ $item->url }}"
                                             class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
@@ -556,24 +585,7 @@
                                             {{ $item->name }}
                                         </a>
                                     </li>
-                                @endif
                             @endforeach
-                        </ul>
-                    </div>
-                    <div class="mt-10 sm:flex w-full">
-                        <p class="font-medium tracking-wide text-gray-300">Mais</p>
-                        <ul class="mt-2 space-y-2">
-                            @foreach ($data['socials'] as $key => $item)
-                            @if ($item->id > 5)
-                                <li>
-                                    <a href="{{ $item->url }}"
-                                        class="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200">
-                                        <i class="{{ $item->icon }}"></i>
-                                            {{ $item->name }}
-                                    </a>
-                                </li>
-                            @endif
-                        @endforeach
                         </ul>
                     </div>
                 </div>
@@ -581,9 +593,9 @@
                     <span class="text-base font-medium tracking-wide text-gray-300">Se inscreva para mais
                         informações.</span>
 
-                    <p class="mt-4 text-sm text-gray-500">
+                     <p class="mt-4 text-sm text-gray-500">
                         Bacon ipsum dolor amet short ribs pig sausage prosciuto chicken spare ribs salami.
-                    </p>
+                    </p> -
                 </div>
             </div>
             <div class="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
@@ -593,17 +605,16 @@
 
             </div>
         </div>
-    </div>
-    <script src="./js/gallery.js">
-        < /> <
-        script >
-            var modal = false;
+    </div> --}}
+    <script>
+        var modal = false;
 
         function closeModal() {
             window.location.href = "/#gallery";
         }
 
         function imagemInModal() {
+            alert('teste')
             var modal = true;
             console.log(event.target.src);
             var boxModal = document.getElementById('box-modal');
@@ -635,9 +646,8 @@
 
                 linkReaMore.style.display = 'block';
             }
-        } <
-        /> < /
-        body >
+        }
+    </script>
+</body>
 
-            <
-            /html>
+</html>
