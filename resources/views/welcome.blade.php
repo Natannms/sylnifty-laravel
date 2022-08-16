@@ -126,18 +126,38 @@
             <ul class=" w-full flex-row justify-between items-center">
                 <li
                     class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
-                    <a href="/sobre" aria-label="Product pricing" title="Product pricing"
+                    <a onclick="OpenMenuMobile()" href="#about" aria-label="Product pricing" title="Product pricing"
                         class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Sobre</a>
                 </li>
                 <li
                     class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
-                    <a href="/aprender" aria-label="Product pricing" title="Product pricing"
+                    <a href="/wiki" aria-label="Product pricing" title="Product pricing"
                         class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Aprenda</a>
                 </li>
                 <li
                     class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
                     <a href="/agenda" aria-label="Product pricing" title="Product pricing"
                         class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Agenda</a>
+                </li>
+                <li
+                    class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
+                    <a href="/blog" aria-label="Product pricing" title="Product pricing"
+                        class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Blog</a>
+                </li>
+                <li
+                    class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
+                    <a href="https://sylnifty.com/?page_id=1394&lang=pt" aria-label="Product pricing" title="Product pricing"
+                        class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Loja</a>
+                </li>
+                <li
+                    class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
+                    <a href="https://privacy.com.br/Checkout/SylNifty/" aria-label="Product pricing" title="Product pricing"
+                        class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Assinatura</a>
+                </li>
+                <li
+                    class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
+                    <a href="#gallery" onclick="OpenMenuMobile()" aria-label="Product pricing" title="Product pricing"
+                        class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Galeria</a>
                 </li>
                 <li
                     class="bg-gray-900 flex items-center justify-center py-4 border-solid border-2 border-sky-500 mt-1">
