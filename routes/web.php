@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServicesController;
@@ -80,3 +81,12 @@ Route::get('/wiki/{id}', [WikiController::class, 'show']);
 Route::get('/wiki/keyword/{id}', [WikiController::class, 'searchByKey']);
 Route::post('/wiki', [WikiController::class, 'store']);
 Route::post('/wiki/delete', [WikiController::class, 'destroy']);
+
+
+//Schedules routes
+Route::get('/agenda', [AgendaController::class, 'index']);
+Route::get('/agenda/create', [AgendaController::class, 'create']);
+Route::get('/agenda/{id}', [AgendaController::class, 'show']);
+Route::post('/agenda', [AgendaController::class, 'store']);
+Route::post('/agenda/delete', [AgendaController::class, 'destroy']);
+

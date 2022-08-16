@@ -42,18 +42,20 @@
       </div>
     @endif
     <div class="create">
-        <form enctype="multipart/form-data" action="/wiki" method="post" class="py-10 px-10 w-4/12">
+        <form  action="/agenda" method="post" class="py-10 px-10 w-4/12">
             @csrf
-            <h1 class="text-2xl font-black">Crie uma nova Wiki</h1>
+            <h1 class="text-2xl font-black">Novo Evento</h1>
             <hr>
-            <div class="label mt-10">Titulo:</div>
-            <input type="text" name="title" placeholder="Titulo" class="input input-bordered input-primary w-full max-w-xs" />
-            <div class="label">Conteúdo</div>
-            <textarea name="content" class="textarea textarea-primary" cols="72" placeholder="digite seu texto"></textarea>
-
+            <div class="label mt-10">Dia:</div>
+            <input type="number" name="day" placeholder="" class="input input-bordered input-primary w-full max-w-xs" />
+            <div class="label">Mês:</div>
+            <input type="number" name="month" placeholder="" class="input input-bordered input-primary w-full max-w-xs" />
+            <div class="label">Local</div>
+            <textarea name="body" class="textarea textarea-primary" cols="72" placeholder="digite seu texto"></textarea>
             <div class="flex ">
                 <button type="submit" class="btn btn-success text-white">Criar</button>
-  {{-- <button type="submit" class="btn btn-error text-white ml-5">Cancelar</button> --}}            </div>
+                {{-- <button type="submit" class="btn btn-error text-white ml-5">Cancelar</button> --}}
+            </div>
         </form>
     </div>
 </body>

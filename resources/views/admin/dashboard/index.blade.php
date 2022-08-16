@@ -38,34 +38,32 @@
                         </svg>
                     </label>
                 </div>
-                <div class="flex-1 px-2 mx-2"> <br><span
-                        class="text-indigo-400 font-bold">{{ $data['user']->name }}</span></div>
+                <div class="flex-1 px-2 mx-2">
+                    <span
+                        class="text-indigo-400 font-bold">{{ $data['user']->name }}</span>
+                    </div>
                 <div class="flex-none hidden lg:block">
                     <ul class="menu menu-horizontal">
                         <!-- Navbar menu content here -->
                         {{-- <li><a href="#profile">Perfil</a></li> --}}
+
+                        <div class="dropdown dropdown-hover">
+                            <label tabindex="0" class="btn m-1">Agenda</label>
+                            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                                <li><a href="/agenda/create">Novo evento</a></li>
+                                <li><a href="/agenda"> Ver agenda</a></li>
+                            </ul>
+                        </div>
+                        <li><a href="#wiki">Nova wiki</a></li>w
                         <div class="dropdown dropdown-hover">
                             <label tabindex="0" class="btn m-1">Posts</label>
                             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                                <li><a href="/posts/create">Novo Post</a></li>
-                                <li><a id="#posts"> Ver Posts</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown dropdown-hover">
-                            <label tabindex="0" class="btn m-1">Serviços</label>
-                            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                                <li><a href="/services/create">Novo Serviço</a></li>
-                                <li><a id="#services"> Ver Serviço</a></li>
+                                <li><a href="/posts/create">Novo post</a></li>
+                                <li><a id="#posts"> Ver posts</a></li>
                             </ul>
                         </div>
                         <li><a href="#social">Redes Sociais</a></li>
-                        <div class="dropdown dropdown-hover">
-                            <label tabindex="0" class="btn m-1">Wiki</label>
-                            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                                <li><a href="/wiki/create">Nova Wiki</a></li>
-                                <li><a id="#posts"> Ver Wiki</a></li>
-                            </ul>
-                        </div>
+                        <li><a href="#services">Serviços</a></li>
                     </ul>
                 </div>
             </div>
@@ -152,10 +150,10 @@
             {{-- posts --}}
             <div class="bg-gray-900">
                 <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-                    <h2
+                    <h2 id="posts"
                         class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                         <span class="relative inline-block">
-                            <span class="relative text-white">Posts</span>
+                            <span  class="relative text-white">Posts</span>
                         </span>
                     </h2>
                     <a href="/posts/create" class="btn btn-primary">Novo Post</a>
@@ -199,7 +197,7 @@
                     <h2
                         class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                         <span class="relative inline-block">
-                            <span class="relative text-white">Serviços</span>
+                            <span id="services" class="relative text-white">Serviços</span>
                         </span>
                     </h2>
                     <a href="/services/create" class="btn btn-primary">Novo Serviço</a>
@@ -243,7 +241,7 @@
                     <h2
                         class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                         <span class="relative inline-block">
-                            <span class="relative text-white">Nova Wiki</span>
+                            <span id="wiki" class="relative text-white">Nova Wiki</span>
                         </span>
                     </h2>
                     <a href="/wiki/create" class="btn btn-primary">Nova Wiki</a>

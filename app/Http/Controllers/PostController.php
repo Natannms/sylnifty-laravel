@@ -17,6 +17,13 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy('id', 'ASC')->first();
+        //if dont have posts, return response.notPosts
+        if (!$posts) {
+           return view('responses.DontHave.Index')->with('error', [
+             'title' => 'Ainda não há posts',
+             'message' => 'Em breve publicaremos alguns posts por aqui !',
+           ]);
+        }
         $comments = Comment::where('post_id', $posts->id)->orderBy('id', 'DESC')->paginate(4);
         $socials = Social::limit(4)->get();
         $data = [

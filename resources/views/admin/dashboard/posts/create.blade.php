@@ -55,8 +55,7 @@
 
             <div class="flex ">
                 <button type="submit" class="btn btn-success text-white">Criar</button>
-                <button type="submit" class="btn btn-error text-white ml-5">Cancelar</button>
-            </div>
+  {{-- <button type="submit" class="btn btn-error text-white ml-5">Cancelar</button> --}}            </div>
         </form>
     </div>
 </body>
