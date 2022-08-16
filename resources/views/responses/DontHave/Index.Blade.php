@@ -15,7 +15,6 @@
 
     <link rel="stylesheet" href="{{ url('storage/css') }}/app.css">
 </head>
-
 <body class="bg-gray-1000">
     <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 ">
         <div class="p-8 rounded shadow-xl sm:p-16 bg-gray-700">
@@ -33,7 +32,7 @@
                         </p>
                         <a href="/" aria-label=""
                             class="inline-flex items-center font-semibold transition-colors duration-200 text-purple-400 hover:text-purple-800">
-                            Voltar</a>
+                            retornar</a>
                     </div>
                 </div>
             @endif
