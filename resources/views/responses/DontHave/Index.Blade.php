@@ -32,7 +32,7 @@
                         </p>
                         <a href="/" aria-label=""
                             class="inline-flex items-center font-semibold transition-colors duration-200 text-purple-400 hover:text-purple-800">
-                            retornar</a>
+                            Voltar</a>
                     </div>
                 </div>
             @endif
