@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Models\Social;
 use App\Models\User;
 use App\Models\Wiki;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -33,7 +34,7 @@ class AdminController extends Controller
     public function login(Request $request)
     {
         //authenticate user
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => Hash::make($request->password)])) {
             //is admin ?
             if (Auth::user()->type == 'admin') {
                 // Authentication passed...
@@ -48,6 +49,8 @@ class AdminController extends Controller
             } else {
                 return redirect()->back()->with('error', 'Acesso Negado!');
             }
+        }else{
+             throw new Exception('Usuário não encontrado');
         }
     }
     /**
