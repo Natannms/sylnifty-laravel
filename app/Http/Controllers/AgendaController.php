@@ -16,8 +16,8 @@ class AgendaController extends Controller
     public function index()
     {
         $Schedule = Schedule::orderBy('id', 'DESC')->limit(4)->get();
-        //if dont have posts, return response.notPosts
-        if (!$Schedule) {
+
+        if(count($Schedule) < 1){
             return view('responses.DontHave.Index')->with('error', [
                 'title' => 'Ainda não há Evento',
                 'message' => 'Em breve publicaremos nossa agenda por aqui !',
