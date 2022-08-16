@@ -6,12 +6,30 @@ use App\Models\Order;
 use App\Models\Post;
 use App\Models\Service;
 use App\Models\Social;
+use App\Models\User;
 use App\Models\Wiki;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
+    public function ApiRegister(Request $request){
+        $user = User::create(
+            [
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'type' => 'admin'
+            ]
+        );
+
+        if($user){
+            return response()->json(['message' => 'User created successfully'], 201);
+        }else{
+            return response()->json(['message' => 'User not created successfully'], 400);
+        }
+    }
     public function login(Request $request)
     {
         //authenticate user
