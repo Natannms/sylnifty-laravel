@@ -637,7 +637,6 @@
         }
 
         function imagemInModal() {
-            alert('teste')
             var modal = true;
             console.log(event.target.src);
             var boxModal = document.getElementById('box-modal');
