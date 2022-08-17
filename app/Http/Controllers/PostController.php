@@ -19,7 +19,7 @@ class PostController extends Controller
         $posts = Post::orderBy('id', 'ASC')->first();
         //if dont have posts, return response.notPosts
         if (!$posts) {
-           return view('responses.DontHave.Index')->with('error', [
+           return view('responses.DontHave.response')->with('error', [
              'title' => 'Ainda não há posts',
              'message' => 'Em breve publicaremos alguns posts por aqui !',
            ]);
