@@ -54,6 +54,16 @@ class SocialController extends Controller
         return back()->with('success', 'Social media criada com sucesso');
     }
 
+    public function ApiStore(Request $request){
+        $social = new Social();
+        $social->name = $request->name;
+        $social->url = $request->url;
+        $social->icon = $request->icon;
+        $social->stamp = $request->stamp;
+        $social->save();
+        return response()->json($social);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -64,6 +74,10 @@ class SocialController extends Controller
     {
         //
     }
+     public function ApiShow(){
+        $social = Social::all();
+        return response()->json($social);
+     }
 
     /**
      * Show the form for editing the specified resource.
