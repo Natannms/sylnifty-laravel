@@ -39,9 +39,8 @@
                     </label>
                 </div>
                 <div class="flex-1 px-2 mx-2">
-                    <span
-                        class="text-indigo-400 font-bold">{{ $data['user']->name }}</span>
-                    </div>
+                    <span class="text-indigo-400 font-bold">{{ $data['user']->name }}</span>
+                </div>
                 <div class="flex-none hidden lg:block">
                     <ul class="menu menu-horizontal">
                         <!-- Navbar menu content here -->
@@ -54,7 +53,7 @@
                                 <li><a href="/agenda"> Ver agenda</a></li>
                             </ul>
                         </div>
-                        <li><a href="#wiki">Nova wiki</a></li>w
+                        <li><a href="#wiki">Nova wiki</a></li>
                         <div class="dropdown dropdown-hover">
                             <label tabindex="0" class="btn m-1">Posts</label>
                             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
@@ -77,6 +76,7 @@
                             <span class="relative text-white">Scocial</span>
                         </span>
                     </h2>
+                    <p>"Redes sociais ativadas aparecem em seu website para o visitante"</p>
                     <a href="/social/create" class="btn btn-primary">Nova Rede Social</a>
                 </div>
                 <div class="relative grid gap-8 row-gap-5 mb-8 md:row-gap-8 lg:grid-cols-4 sm:grid-cols-2">
@@ -84,17 +84,36 @@
                         <div class="w-px h-full bg-gray-300 lg:w-full lg:h-px"></div>
                     </div>
                     @foreach ($data['social'] as $item)
-                        <div class="p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2">
+                        <div
+                            class="p-5 duration-300 transform
+                        @if ($item->stamp === 1) bg-gray-200
+                        @else
+                            bg-gray-900 text-white @endif
+                       border rounded shadow-sm hover:-translate-y-2">
                             <div class="flex items-center justify-between mb-2">
-                                <p class="text-lg font-bold leading-5 text-indigo-700">{{ $item->name }}</p>
+                                <p class="text-lg font-bold leading-5 ">{{ $item->name }}</p>
                                 <p
-                                    class="flex items-center justify-center w-6 h-6 font-bold rounded text-deep-purple-accent-400 bg-indigo-50">
-                                    1
+                                    class="flex items-center justify-center w-6 h-6 font-bold rounded text-white bg-indigo-500">
+                                    {{ $item->id }}
                                 </p>
                             </div>
 
-                            <a class="text-sm  btn btn-sm text-gray-200 bg-indigo-700"
+                            <a class="text-sm  btn btn-sm  bg-indigo-700  text-gray-200"
                                 href="{{ $item->url }}">Acessar</a>
+
+                            @if ($item->stamp === 1)
+                            <a class="text-sm  btn btn-sm  bg-red-700  text-gray-200"
+                                href="/social/visible/{{ $item->id }}">
+                                desativar
+                            </a>
+                            @else
+                            <a class="text-sm  btn btn-sm  bg-green-700  text-gray-200"
+                                href="/social/visible/{{ $item->id }}">
+                                Ativar
+                            </a>
+
+                            @endif
+
                             {{-- <form action="/social/delete" method="post">
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $item->id }}">
@@ -153,7 +172,7 @@
                     <h2 id="posts"
                         class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
                         <span class="relative inline-block">
-                            <span  class="relative text-white">Posts</span>
+                            <span class="relative text-white">Posts</span>
                         </span>
                     </h2>
                     <a href="/posts/create" class="btn btn-primary">Novo Post</a>
@@ -163,10 +182,11 @@
                     <div
                         class="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
                         <svg viewBox="0 0 88 88" class="w-full max-w-screen-xl text-gray-800">
-                            <circle fill="currentColor" fill-opacity="0.4" cx="44" cy="44"
-                                r="15.5"></circle>
+                            <circle fill="currentColor" fill-opacity="0.4" cx="44" cy="44" r="15.5">
+                            </circle>
                             <circle fill-opacity="0.1" fill="currentColor" cx="44" cy="44"
-                                r="44"></circle>
+                                r="44">
+                            </circle>
                             <circle fill-opacity="0.1" fill="currentColor" cx="44" cy="44"
                                 r="37.5"></circle>
                             <circle fill-opacity="0.1" fill="currentColor" cx="44" cy="44"
@@ -191,8 +211,8 @@
                     </div>
                 </div>
             </div>
-             {{-- serviços --}}
-             <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+            {{-- serviços --}}
+            <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                 <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                     <h2
                         class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
@@ -235,7 +255,7 @@
                     @endforeach
                 </div>
             </div>
-             {{-- wiki --}}
+            {{-- wiki --}}
             <div class="">
                 <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                     <h2
@@ -259,7 +279,7 @@
                                             d="M6 18L18 6M6 6l12 12"></path>
                                     </svg>
 
-                                    </button>
+                                </button>
                             </form>
                             {{ $item->title }}
                         </div>

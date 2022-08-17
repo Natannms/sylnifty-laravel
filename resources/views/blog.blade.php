@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-
+    <script src="https://kit.fontawesome.com/6ed674a615.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.20.0/dist/full.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="{{ url('storage/css') }}/app.css">
@@ -133,44 +133,20 @@
                     </a>
 
                 </div>
+
                 <div class="flex flex-col items-center">
                     <div class="mb-2 text-sm text-gray-600 md:mb-2">Follow us</div>
                     <div class="flex items-center space-x-4">
-                        <div class="flex items-center">
-                            <a href="https://www.instagram.com/sylniftyfeet/"
-                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
-                                <img style="filter: invert(75%);" src="{{ url('storage/icons') }}/instagram.png"
-                                    width="25" alt="">
-                            </a>
-                        </div>
-                        <div class="flex items-center">
-                            <a href="https://www.facebook.com/syl.nifty"
-                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
-                                <img style="filter: invert(75%);" src="{{ url('storage/icons') }}/facebook.png"
-                                    width="25" alt="">
-                            </a>
-                        </div>
-                        <div class="flex items-center">
-                            <a href="https://twitter.com/Syl_Nifty?t=XYrnpmotaZJTXn33dEHUdA&s=09"
-                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
-                                <img style="filter: invert(75%);" src="{{ url('storage/icons') }}/twitter.png"
-                                    width="25" alt="">
-                            </a>
-                        </div>
-                        <div class="flex items-center">
-                            <a href="/"
-                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
-                                <img style="filter: invert(75%);" src="{{ url('storage/icons') }}/youtube.png"
-                                    width="25" alt="">
-                            </a>
-                        </div>
-                        <div class="flex items-center">
-                            <a href="https://api.whatsapp.com/send?phone=5541997097495&text=Lady%20Syl%20Nifty"
-                                class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
-                                <img style="filter: invert(75%);" src="{{ url('storage/icons') }}/whatsapp.png"
-                                    width="25" alt="">
-                            </a>
-                        </div>
+                        @foreach ($data['socials'] as $key => $item)
+                            @if ($item->stamp === 1)
+                                <div class="flex items-center">
+                                    <a href="https://www.instagram.com/sylniftyfeet/"
+                                    class="text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400">
+                                    <i class="{{ $item->icon }} text-white text-3xl"></i>
+                                    </a>
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 
 class SocialController extends Controller
 {
+
+    public function visible($id)
+    {
+        $social = Social::find($id);
+        $social->stamp = !$social->stamp;
+        $social->save();
+
+        return back();
+
+    }
     /**
      * Display a listing of the resource.
      *

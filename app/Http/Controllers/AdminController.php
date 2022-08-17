@@ -30,21 +30,31 @@ class AdminController extends Controller
             return response()->json(['message' => 'User not created successfully'], 400);
         }
     }
+    public function dashboard()
+    {
+        //check if user is admin
+        if(Auth::user()->type === 'admin'){
+            $data =[
+                'user' => Auth::user(),
+                'orders' => Order::all(),
+                'posts' => Post::all(),
+                'services' => Service::all(),
+                'social' => Social::all(),
+                'wiki' => Wiki::all(),
+            ];
+            return view('admin.dashboard.index', compact('data'));
+        }else{
+            throw new \Exception('Esse usuário não tem permissão para acessar');
+        }
+    }
+
     public function login(Request $request)
     {
         //authenticate user
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             //is admin ?
             if (Auth::user()->type == 'admin') {
-                // Authentication passed...
-                return view('admin.dashboard.index')->with('data', [
-                    'user' => Auth::user(),
-                    'orders' => Order::all(),
-                    'posts' => Post::all(),
-                    'services' => Service::all(),
-                    'social' => Social::all(),
-                    'wiki' => Wiki::all(),
-                ]);
+                return redirect()->route('admin.dashboard');
             } else {
                throw new \Exception('Esse usuário não tem permissão para acessar');
             }

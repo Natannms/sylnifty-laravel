@@ -32,7 +32,7 @@ Route::get('/admin/login', function () {
     return view('admin.login.index');
 });
 Route::post('/admin/auth', [AdminController::class, 'login']);
-
+Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 //client routes
 Route::get('/myaccount/home', [UserController::class, 'myaccountHome']);
 
@@ -40,7 +40,7 @@ Route::get('/myaccount/home', [UserController::class, 'myaccountHome']);
 Route::get('/social/create', [SocialController::class, 'create']);
 Route::post('/social', [SocialController::class, 'store']);
 Route::post('/social/delete', [SocialController::class, 'destroy']);
-
+Route::get('/social/visible/{id}', [SocialController::class, 'visible']);
 //User Routes
 Route::post('/user/login', [UserController::class, 'login'])->name('user.login');
 Route::post('/user/register', [UserController::class, 'store'])->name('user.register');
