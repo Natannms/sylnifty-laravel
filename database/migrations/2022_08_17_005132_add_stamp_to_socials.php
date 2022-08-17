@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ChangeStampInActiveInSocials extends Migration
+class AddStampToSocials extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class ChangeStampInActiveInSocials extends Migration
     public function up()
     {
         Schema::table('socials', function (Blueprint $table) {
-            $table->boolean('stamp')->default(true)->change();
+            $table->boolean('stamp')->default(true);
         });
     }
 
