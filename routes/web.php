@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\BackgroundController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PostController;
@@ -33,6 +34,11 @@ Route::get('/admin/login', function () {
 });
 Route::post('/admin/auth', [AdminController::class, 'login']);
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+//settings backgrounds
+Route::get('admin/settings/backgrounds', [BackgroundController::class, 'index'])->name('admin.bagkckroundsSettings');
+Route::post('/settings/backgrounds', [BackgroundController::class, 'store'])->name('admin.bagkckroundsSettings.store');
+Route::post('/settings/backgrounds/active', [BackgroundController::class, 'active'])->name('admin.backgroundsSettings.active');
+
 //client routes
 Route::get('/myaccount/home', [UserController::class, 'myaccountHome']);
 

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
     <script src="https://kit.fontawesome.com/6ed674a615.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@2.20.0/dist/full.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="{{ url('storage/css') }}/app.css">
@@ -39,12 +40,22 @@
                     </label>
                 </div>
                 <div class="flex-1 px-2 mx-2">
-                    <span class="text-indigo-400 font-bold">{{ $data['user']->name }}</span>
+                    <span class="text-indigo-400 font-bold">{{ $data['user']->name }}  </span>
+                    <div class="dropdown dropdown-hover">
+                        <label tabindex="0" class="btn m-1">
+                            <i class="material-icons" style="font-size:18px;color:#fff">settings</i>
+                        </label>
+                        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a href="/agenda/create">Minha Conta</a></li>
+                            <li><a href="{{ route('admin.bagkckroundsSettings') }}">Background</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="flex-none hidden lg:block">
                     <ul class="menu menu-horizontal">
                         <!-- Navbar menu content here -->
                         {{-- <li><a href="#profile">Perfil</a></li> --}}
+
 
                         <div class="dropdown dropdown-hover">
                             <label tabindex="0" class="btn m-1">Agenda</label>
@@ -63,6 +74,7 @@
                         </div>
                         <li><a href="#social">Redes Sociais</a></li>
                         <li><a href="#services">Serviços</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -102,16 +114,15 @@
                                 href="{{ $item->url }}">Acessar</a>
 
                             @if ($item->stamp === 1)
-                            <a class="text-sm  btn btn-sm  bg-red-700  text-gray-200"
-                                href="/social/visible/{{ $item->id }}">
-                                desativar
-                            </a>
+                                <a class="text-sm  btn btn-sm  bg-red-700  text-gray-200"
+                                    href="/social/visible/{{ $item->id }}">
+                                    desativar
+                                </a>
                             @else
-                            <a class="text-sm  btn btn-sm  bg-green-700  text-gray-200"
-                                href="/social/visible/{{ $item->id }}">
-                                Ativar
-                            </a>
-
+                                <a class="text-sm  btn btn-sm  bg-green-700  text-gray-200"
+                                    href="/social/visible/{{ $item->id }}">
+                                    Ativar
+                                </a>
                             @endif
 
                             {{-- <form action="/social/delete" method="post">
@@ -182,7 +193,8 @@
                     <div
                         class="absolute inset-x-0 top-0 items-center justify-center hidden overflow-hidden md:flex md:inset-y-0">
                         <svg viewBox="0 0 88 88" class="w-full max-w-screen-xl text-gray-800">
-                            <circle fill="currentColor" fill-opacity="0.4" cx="44" cy="44" r="15.5">
+                            <circle fill="currentColor" fill-opacity="0.4" cx="44" cy="44"
+                                r="15.5">
                             </circle>
                             <circle fill-opacity="0.1" fill="currentColor" cx="44" cy="44"
                                 r="44">

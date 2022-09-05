@@ -38,10 +38,15 @@
                             class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Assinatura</a>
                     </li>
                     <li>
-                        <a href="https://sylnifty.com/?page_id=1394&lang=pt" aria-label="Product pricing"
+                        <a href="https://www.clips4sale.com/studio/205859/sylnifty" aria-label="Product pricing"
                             title="Product pricing"
                             class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Loja</a>
                     </li>
+                    {{-- <li>
+                        <a href="https://sylnifty.com/?page_id=1394&lang=pt" aria-label="Product pricing"
+                            title="Product pricing"
+                            class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Loja</a>
+                    </li> --}}
                     <li>
                         <a href="/wiki" aria-label="Product pricing" title="Product pricing"
                             class="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">Aprenda</a>
@@ -210,7 +215,7 @@
         }
     </script>
     <div class="relative pt-40">
-        <img src="{{ url('storage/backgrounds') }}/bg2.jpg" class="absolute inset-0 object-cover w-full h-full"
+        <img src="{{ url('storage/backgrounds') }}/{{ $data['backgrounds']->image }}" class="absolute inset-0 object-cover w-full h-full"
             alt="" />
         <div class="relative bg-opacity-75 bg-deep-purple-accent-700">
             <svg class="absolute inset-x-0 bottom-0 text-white" viewBox="0 0 1160 163">
